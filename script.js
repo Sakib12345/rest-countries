@@ -16,7 +16,7 @@ const displayCountries = (countries) => {
         const countryInfo = `
         <h3 class="country-name">${country.name}</h3>
         <p>${country.capital}</p>
-        <button onclick="togglePopup('${country.name}')">Details</button>
+        <button id="btn" onclick="togglePopup('${country.name}')">Details</button>
         `
         countryDiv.innerHTML = countryInfo
         countriesContainer.appendChild(countryDiv);

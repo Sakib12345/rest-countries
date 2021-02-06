@@ -74,3 +74,20 @@
     transition:all 300ms ease-in-out;
     transform:translate(-50%,-50%) scale(1);
   }
+
+  #btn {
+    color: #494949;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 8px;
+    border: 2px solid #494949;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    #btn:hover {
+        color: #ffffff;
+        background: #f6b93b;
+        border-color: #f6b93b;
+        transition: all 0.2s ease 0s;
+        }  
