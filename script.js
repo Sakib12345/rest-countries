@@ -16,6 +16,7 @@ const displayCountries = (countries) => {
         const countryInfo = `
         <h3 class="country-name">${country.name}</h3>
         <p>${country.capital}</p>
+        <button onclick="togglePopup('${country.name}')">Details</button>
         `
         countryDiv.innerHTML = countryInfo
         countriesContainer.appendChild(countryDiv);
@@ -45,4 +46,25 @@ const displayCountries = (countries) => {
     //     // countryDiv.appendChild(capital)
 
     // }
+}
+
+
+
+
+const togglePopup = name => {
+    document.getElementById("popup-1").classList.toggle("active");
+    const url = `https://restcountries.eu/rest/v2/name/${name}`
+    fetch(url)
+    .then(res => res.json())
+    .then(data => renderCountryInfo(data[0]))
+}
+
+const renderCountryInfo = country => {
+    const countryDiv = document.getElementById('countryDetail')
+    countryDiv.innerHTML  = `
+        <h1>Name: ${country.name}</h1>
+        <p>Population: ${country.population}</p>
+        <p>Area: ${country.area}</p>
+        <img id="flag" src="${country.flag}"/>
+    `
 }
